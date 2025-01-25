@@ -20,7 +20,7 @@ This is demo **Spring Boot** application for managing a **Fitness Club**, allowi
 
   git clone https://github.com/swetha-bomma/abcfitness.git
 
-  Run the application using **mvn clean spring-boot:run**
+  Run the application using ***mvn clean spring-boot:run***
   
   For H2 Database: http://localhost:9091/h2-console
   
