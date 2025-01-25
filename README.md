@@ -1,5 +1,5 @@
-# abcfitness
-#  ABC Fitness  
+
+#  ABCFitness  
 
 This is demo **Spring Boot** application for managing a **Fitness Club**, allowing users to:  
 - **Create Classes within a Club** 📅  
