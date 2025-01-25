@@ -21,9 +21,6 @@ public class BookingDto {
 
     private Long memberId;
 
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    @JsonDeserialize(using = LocalDateDeserializer.class)
-    @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate participationDate;
 
     private Long classId;

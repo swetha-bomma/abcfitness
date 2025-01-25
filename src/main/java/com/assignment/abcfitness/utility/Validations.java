@@ -2,7 +2,7 @@ package com.assignment.abcfitness.utility;
 
 import java.time.LocalDate;
 
-import com.assignment.abcfitness.entity.CreateClassForClub;
+import com.assignment.abcfitness.entity.GymClass;
 
 public class Validations {
 
@@ -24,7 +24,7 @@ public class Validations {
     }
 
     public static boolean checkParticipateDateBetweenClassDates(LocalDate participationDate,
-            CreateClassForClub createClassForClub) {
+            GymClass createClassForClub) {
         return !participationDate.isBefore(createClassForClub.getStartDate())
                 && !participationDate.isAfter(createClassForClub.getEndDate());
     }

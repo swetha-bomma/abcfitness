@@ -16,6 +16,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -24,12 +26,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "class_master")
+@Table(name = "gymclasses")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateClassForClub {
+public class GymClass {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,25 +41,20 @@ public class CreateClassForClub {
 	@Column(name = "class_name", nullable = false)
 	private String className;
 
-	@Column(name = "club_id", nullable = false)
-	private Long clubId;
+	// @Column(name = "club_id", nullable = false)
+	// private Long clubId;
+
+	@ManyToOne
+	@JoinColumn(name = "club_id")
+	private Gym club;
 
 	@Column(name = "start_date", nullable = false)
-	// @JsonFormat(pattern = "yyyy-MM-dd")
-	@JsonFormat(pattern = "dd/MM/yyyy")
-	@JsonDeserialize(using = LocalDateDeserializer.class)
-	@JsonSerialize(using = LocalDateSerializer.class)
 	private LocalDate startDate;
 
 	@Column(name = "end_date", nullable = false)
-	// @JsonFormat(pattern = "yyyy-MM-dd")
-	@JsonFormat(pattern = "dd/MM/yyyy")
-	@JsonDeserialize(using = LocalDateDeserializer.class)
-	@JsonSerialize(using = LocalDateSerializer.class)
 	private LocalDate endDate;
 
 	@Column(name = "start_time", nullable = false)
-	@JsonFormat(pattern = "HH:mm:ss")
 	private LocalTime startTime;
 
 	@Column(name = "duration", nullable = false)

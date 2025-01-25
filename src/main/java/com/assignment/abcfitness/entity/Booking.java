@@ -34,22 +34,15 @@ public class Booking {
     @Column(name = "book_id", nullable = false)
     private Long book_id;
 
-    // @Column(name = "member_name", nullable = false)
-    // private String memberName;
-
     @ManyToOne
     @JoinColumn(name = "member_id")
     private Member member;
 
     @Column(name = "participation_date", nullable = false)
-    // @JsonFormat(pattern = "yyyy-MM-dd")
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    @JsonDeserialize(using = LocalDateDeserializer.class)
-    @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate participationDate;
 
     @ManyToOne
     @JoinColumn(name = "class_id")
-    private CreateClassForClub createClassForClub;
+    private GymClass createClassForClub;
 
 }
